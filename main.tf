@@ -1,16 +1,17 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
-      version = ">= 0.12"
+      source  = "hashicorp/azurerm"
+      version = "~> 2.65"
     }
   }
+
+  required_version = ">= 0.11"
 }
 
-# Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
- 
+}
 data "azurerm_client_config" "current" {}
  
 resource "azurerm_resource_group" "tamopsrg" {
@@ -25,4 +26,4 @@ resource "azurerm_storage_account" "tamopssa" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 } 
-}
+

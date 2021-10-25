@@ -1,13 +1,15 @@
-provider "azurerm" {
-    # The "feature" block is required for AzureRM provider 2.x.
-    # If you're using version 1.x, the "features" block is not allowed.
-    version = "~>2.0"
-    features {}
-}
- 
 terraform {
-  backend "azurerm" {}
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = ">= 0.12"
+    }
+  }
 }
+
+# Configure the Microsoft Azure Provider
+provider "azurerm" {
+  features {}
  
 data "azurerm_client_config" "current" {}
  
@@ -22,4 +24,5 @@ resource "azurerm_storage_account" "tamopssa" {
   location                 = azurerm_resource_group.tamopsrg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+} 
 }

@@ -12,7 +12,8 @@ resource "azurerm_storage_account" "terraformtest1" {
   resource_group_name      = azurerm_resource_group.terraformtest.name
   location                 = azurerm_resource_group.terraformtest.location
   account_tier             = "Standard"
-  account_replication_type = "LRS"}
+  account_replication_type = "LRS"
+  }
 
 resource "azurerm_app_service_plan" "terraformtest2" {
   name                = "azure-functions-test-service-plan20"

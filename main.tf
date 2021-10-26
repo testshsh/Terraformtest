@@ -2,23 +2,23 @@
 provider "azurerm" {
   features {}
 }
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "terraformtest" {
   name     = "azure-functions-test-rg"
   location = "West Europe"
 }
 
-resource "azurerm_storage_account" "example" {
-  name                     = "functionsapptestsa1"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
+resource "azurerm_storage_account" "terraformtest1" {
+  name                     = "satesting1"
+  resource_group_name      = azurerm_resource_group.terraformtest.name
+  location                 = azurerm_resource_group.terraformtest.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
-resource "azurerm_app_service_plan" "example" {
-  name                = "azure-functions-test-service-plan"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+resource "azurerm_app_service_plan" "terraformtest2" {
+  name                = "azure-functions-test-service-plan20"
+  location            = azurerm_resource_group.terraformtest.location
+  resource_group_name = azurerm_resource_group.terraformtest.name
 
   sku {
     tier = "Standard"
@@ -26,11 +26,11 @@ resource "azurerm_app_service_plan" "example" {
   }
 }
 
-resource "azurerm_function_app" "example" {
+resource "azurerm_function_app" "terraformtest3" {
   name                       = "test-azure-functions"
-  location                   = azurerm_resource_group.example.location
-  resource_group_name        = azurerm_resource_group.example.name
-  app_service_plan_id        = azurerm_app_service_plan.example.id
-  storage_account_name       = azurerm_storage_account.example.name
-  storage_account_access_key = azurerm_storage_account.example.primary_access_key
+  location                   = azurerm_resource_group.terraformtest.location
+  resource_group_name        = azurerm_resource_group.terraformtest.name
+  app_service_plan_id        = azurerm_app_service_plan.terraformtest2.id
+  storage_account_name       = azurerm_storage_account.terraformtest1.name
+  storage_account_access_key = azurerm_storage_account.terraformtest1.primary_access_key
 }

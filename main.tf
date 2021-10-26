@@ -49,3 +49,4 @@ resource "azurerm_function_app" "example" {
   storage_account_name       = azurerm_storage_account.example.name
   storage_account_access_key = azurerm_storage_account.example.primary_access_key
 }
+}

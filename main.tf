@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "terraformtest" {
 }
 
 resource "azurerm_storage_account" "terraformtest1" {
-  name                     = "satesting1"
+  name                     = "satestingteraform786"
   resource_group_name      = azurerm_resource_group.terraformtest.name
   location                 = azurerm_resource_group.terraformtest.location
   account_tier             = "Standard"

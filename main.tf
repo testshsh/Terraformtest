@@ -3,7 +3,7 @@ provider "azurerm" {
   features {}
 }
 resource "azurerm_resource_group" "terraformtest" {
-  name     = "azure-functions-test-rg78600451"
+  name     = "azure-functions-test-rg2378600451"
   location = "West Europe"
 }
 

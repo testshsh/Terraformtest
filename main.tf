@@ -3,12 +3,12 @@ provider "azurerm" {
   features {}
 }
 resource "azurerm_resource_group" "terraformtest" {
-  name     = "azure-functions-test-rg786001"
+  name     = "azure-functions-test-rg78600451"
   location = "West Europe"
 }
 
 resource "azurerm_storage_account" "terraformtest1" {
-  name                     = "satestingteraform7861"
+  name                     = "satestingteraform78161"
   resource_group_name      = azurerm_resource_group.terraformtest.name
   location                 = azurerm_resource_group.terraformtest.location
   account_tier             = "Standard"

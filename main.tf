@@ -22,7 +22,7 @@ resource "azurerm_app_service_plan" "terraformtest2" {
 
   sku {
     tier = "Standard"
-    size = "S1"
+    size = "S2"
   }
 }
 

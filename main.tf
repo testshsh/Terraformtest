@@ -12,6 +12,7 @@ terraform {
         storage_account_name = "teststate"
         container_name       = "test"
         key                  = "terraform786.tfstate"
+  }
 }
 provider "azurerm" {
   features {}

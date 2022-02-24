@@ -1,3 +1,8 @@
+variable "rg-name" {
+  description = "The name of the resource group are deployed such as dev, qa, prod"
+}
+
+
 variable namespace {
     description = "The namespace in which the resources are deployed such as dev, qa, prod"
 }

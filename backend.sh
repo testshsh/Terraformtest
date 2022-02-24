@@ -1,8 +1,8 @@
 #!/bin/bash
 
-RESOURCE_GROUP_NAME=rg-terraform-tfstate
-STORAGE_ACCOUNT_NAME=Test$RANDOM
-CONTAINER_NAME=Test786
+RESOURCE_GROUP_NAME=Test-Poc
+STORAGE_ACCOUNT_NAME=SA-Test$RANDOM
+CONTAINER_NAME=Test$RANDOM
 
 # Create resource group
 az group create --name $RESOURCE_GROUP_NAME --location eastus

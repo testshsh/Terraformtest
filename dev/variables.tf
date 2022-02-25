@@ -20,5 +20,5 @@ variable "storage_account_name" {
 }
 
 variable "environment" {
-    description = "The environment in which the resources
+    description = "The environment in which the resources"
 }

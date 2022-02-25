@@ -8,10 +8,10 @@ terraform {
 }
 terraform {
   backend "azurerm" {
-        resource_group_name  = "test-poc"
-        storage_account_name = "teststate"
-        container_name       = "test"
-        key                  = "terraform786.tfstate"
+        resource_group_name  = "test-poc1"
+        storage_account_name = "terraformstate786"
+        container_name       = "terraformstate"
+        key                  = "terraform1.tfstate"
   }
 }
 provider "azurerm" {
